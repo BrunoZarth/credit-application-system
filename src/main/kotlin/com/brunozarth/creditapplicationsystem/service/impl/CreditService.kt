@@ -1,6 +1,7 @@
 package com.brunozarth.creditapplicationsystem.service.impl
 
 import com.brunozarth.creditapplicationsystem.entity.Credit
+import com.brunozarth.creditapplicationsystem.exception.BusinessException
 import com.brunozarth.creditapplicationsystem.repository.CreditRepository
 import com.brunozarth.creditapplicationsystem.service.ICreditService
 import org.springframework.stereotype.Service
@@ -29,11 +30,6 @@ class CreditService(
             ?: throw BusinessException("Creditcode $creditCode not found"))
         return if (credit.customer?.id == customerId) credit
         else throw IllegalArgumentException("Contact admin")
-        /*if (credit.customer?.id == customerId) {
-          return credit
-        } else {
-          throw RuntimeException("Contact admin")
-        }*/
     }
 
     private fun validDayFirstInstallment(dayFirstInstallment: LocalDate): Boolean {

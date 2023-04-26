@@ -1,6 +1,7 @@
 package com.brunozarth.creditapplicationsystem.service.impl
 
 import com.brunozarth.creditapplicationsystem.entity.Customer
+import com.brunozarth.creditapplicationsystem.exception.BusinessException
 import com.brunozarth.creditapplicationsystem.repository.CustomerRepository
 import com.brunozarth.creditapplicationsystem.service.ICustomerService
 import org.springframework.stereotype.Service
